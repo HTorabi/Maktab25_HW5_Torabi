@@ -10,11 +10,11 @@ public abstract class Goods {
         this.price = price;
         this.number = number;
     }
-    void selled() {
+    public void sold() {
         number--;
     }
 
-    void regained() {
+    public void regained() {
         number++;
     }
 }
