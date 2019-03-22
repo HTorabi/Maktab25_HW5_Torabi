@@ -1,7 +1,24 @@
 public abstract class Goods {
+    private String type;
+    private String producer;
     private long price;
     private int number;
-    
+
+    public String getProducer() {
+        return producer;
+    }
+
+    public void setProducer(String producer) {
+        this.producer = producer;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public long getPrice() {
         return price;
@@ -23,7 +40,7 @@ public abstract class Goods {
         number--;
     }
 
-   void regained() {
+    void regained() {
         number++;
     }
 }
