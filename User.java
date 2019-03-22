@@ -1,16 +1,7 @@
 public class User {
-    String city;
-    String town;
-    String streetName;
-    private String ID;
-    private long password;
-    private String firstName;
-    private String lastName;
-    private long phoneNumber;
-    private String email;
-    private long postalCode;
-
-    public User(String ID, long password, String firstName, String lastName, long phoneNumber, String email, String city, String town, String streetName, long postalCode) {
+    private String ID,password,firstName,lastName,phoneNumber,city,town,streetName,email,postalCode;
+    public User(String ID, String password, String firstName, String lastName, String phoneNumber,
+                String email, String city, String town, String streetName, String postalCode) {
         this.ID = ID;
         this.password = password;
         this.firstName = firstName;
