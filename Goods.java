@@ -17,4 +17,20 @@ public abstract class Goods {
     public void regained() {
         number++;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getProducer() {
+        return producer;
+    }
+
+    public long getPrice() {
+        return price;
+    }
+
+    public int getNumber() {
+        return number;
+    }
 }
