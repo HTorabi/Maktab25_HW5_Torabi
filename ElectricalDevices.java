@@ -1,12 +1,10 @@
 public class ElectricalDevices extends Goods {
     private String color;
 
-    public String getColor() {
-        return color;
-    }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
+    public ElectricalDevices(String type, String producer, long price, int number,String color) {
+        super(type, producer, price, number);
+        this.color=color;
 
+    }
 }
