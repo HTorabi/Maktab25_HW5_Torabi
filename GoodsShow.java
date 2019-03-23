@@ -1,6 +1,5 @@
 public class GoodsShow {
-    GoodsShow(){
-        for (Goods g:GoodsList.goods){
+    GoodsShow(Goods g){
             System.out.println(g.ID);
             System.out.println("Type: "+g.type);
 
@@ -18,4 +17,4 @@ public class GoodsShow {
 
             System.out.println("======================");
     }
-}}
+}
