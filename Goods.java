@@ -1,11 +1,12 @@
 public class Goods {
-    int ID;
+     int ID;
      String type;
      String producer;
      long price;
      int number;
 
-    public Goods(String type, String producer, long price, int number) {
+    public Goods(int ID,String type, String producer, long price, int number) {
+        this.ID=ID;
         this.type = type;
         this.producer = producer;
         this.price = price;
