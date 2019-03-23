@@ -1,4 +1,5 @@
-public abstract class Goods {
+public class Goods {
+    int ID;
      String type;
      String producer;
      long price;
