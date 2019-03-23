@@ -25,23 +25,12 @@ public class Main {
         System.out.println("Please Enter Your Postal Code");
         String postalCode=scanner.nextLine();
         new UserAddress(city,town,streetName,postalCode);
-        for (Goods g:GoodsList.goods){
-            System.out.println(g.ID);
-            System.out.println("Type: "+g.type);
+        new GoodsShow();
 
-            if (g instanceof Shoes)
-                System.out.println("Color: "+((Shoes) g).color);
-            if (g instanceof ElectricalDevices)
-                System.out.println("Color: "+((ElectricalDevices)g).color);
-            if (g instanceof Book)
-                System.out.println("Name: "+((Book) g).name+"\n"+"Writer: "+((Book) g).writter);
-            if (g instanceof Magazine)
-                System.out.println("Name: "+((Magazine) g).name+"\n");
-            System.out.println("Producer: "+g.producer);
-            System.out.println("Price: "+g.price);
-            System.out.println("Number: "+g.number);
 
-            System.out.println("======================");
+            System.out.println("Enter Code of goods which you want");
+            int id=scanner.nextInt();
+            System.out.println("Enter Number of this");
+            int num=scanner.nextInt();
         }
     }
-}
