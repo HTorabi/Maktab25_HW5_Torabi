@@ -1,8 +1,8 @@
 public class Shoes extends Goods {
     Color color;
 
-    public Shoes(String type, String producer, long price, int number, Color color) {
-        super(type, producer, price, number);
+    public Shoes(int ID,String type, String producer, long price, int number, Color color) {
+        super(ID,type, producer, price, number);
         this.color = color;
     }
 

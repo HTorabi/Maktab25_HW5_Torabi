@@ -1,5 +1,5 @@
 public class Magazine extends Readable {
-    public Magazine(String type, String producer, long price, int number, String name) {
-        super(type, producer, price, number, name);
+    public Magazine(int ID,String type, String producer, long price, int number, String name) {
+        super(ID,type, producer, price, number, name);
     }
 }

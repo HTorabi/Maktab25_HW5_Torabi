@@ -26,6 +26,7 @@ public class Main {
         String postalCode=scanner.nextLine();
         new UserAddress(city,town,streetName,postalCode);
         for (Goods g:GoodsList.goods){
+            System.out.println(g.ID);
             System.out.println("Type: "+g.type);
 
             if (g instanceof Shoes)
