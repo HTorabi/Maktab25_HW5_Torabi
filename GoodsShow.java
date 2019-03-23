@@ -1,6 +1,6 @@
 public class GoodsShow {
     GoodsShow(Goods g){
-            System.out.println(g.ID);
+            System.out.println("Code: "+g.ID);
             System.out.println("Type: "+g.type);
 
             if (g instanceof Shoes)
