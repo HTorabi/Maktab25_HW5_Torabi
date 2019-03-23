@@ -1,5 +1,5 @@
 public class ElectricalDevices extends Goods {
-    private String color;
+    String color;
 
 
     public ElectricalDevices(String type, String producer, long price, int number,String color) {
