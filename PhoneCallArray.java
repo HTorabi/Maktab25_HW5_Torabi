@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class PhoneCallArray {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        PhoneCall[] phoneCalls = new PhoneCall[8];
-        for (int i = 0; i < 8; i++) {
+        PhoneCall[] phoneCalls = new PhoneCall[2];
+        for (int i = 0; i < 2; i++) {
             System.out.println("Incoming or Outgoing Phone Call?");
             if (scanner.nextLine().equalsIgnoreCase("incoming")) {
                 System.out.println("Enter Phone Number");
@@ -13,13 +13,14 @@ public class PhoneCallArray {
                 System.out.println("Enter Phone Number");
                 String phone = scanner.nextLine();
                 System.out.println("Enter Time in Minute");
-                int time = scanner.nextInt();
+                Scanner scanner1=new Scanner(System.in);
+                int time = scanner1.nextInt();
                 phoneCalls[i] = new OutgoingPhoneCall(phone, time);
 
             }
-
-
         }
+        for (PhoneCall phoneCall:phoneCalls)
+            phoneCall.getInformation();
 
     }
 }
