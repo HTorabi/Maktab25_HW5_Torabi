@@ -2,6 +2,7 @@ public abstract class PhoneCall {
     String phoneNumber;
     double price;
     PhoneCall(String phoneNumber){
+        this.phoneNumber=phoneNumber;
         this.price=0.0;
     }
 
