@@ -7,7 +7,7 @@ public class Main {
         String ID = scanner.nextLine();
         System.out.println("Please Enter Your Password");
         String password = scanner.nextLine();
-        new UserRegistration(ID, password);
+        UserRegistration userRegistration1=new UserRegistration(ID, password);
         System.out.println("Please Enter Your first name");
         String firstName = scanner.nextLine();
         System.out.println("Please Enter Your last name");
@@ -16,7 +16,7 @@ public class Main {
         String phoneNumber = scanner.nextLine();
         System.out.println("Please Enter Your Email");
         String email = scanner.nextLine();
-        new UserInformation(firstName, lastName, phoneNumber, email);
+        UserInformation userInformation1=new UserInformation(firstName, lastName, phoneNumber, email);
         System.out.println("Please Enter Your City name");
         String city = scanner.nextLine();
         System.out.println("Please Enter Your Town name");
@@ -25,10 +25,10 @@ public class Main {
         String streetName = scanner.nextLine();
         System.out.println("Please Enter Your Postal Code");
         String postalCode = scanner.nextLine();
-        new UserAddress(city, town, streetName, postalCode);
+        UserAddress userAddress1=new UserAddress(city, town, streetName, postalCode);
         for (Goods g : GoodsList.goods)
             new GoodsShow(g);
-        Goods[] item = new Goods[5];
+        ShoppingBox[] item = new ShoppingBox[5];
         int i = 0;
         while (true) {
 
@@ -37,13 +37,12 @@ public class Main {
             System.out.println("Enter Number of this");
             int num = scanner.nextInt();
             System.out.println("Your Shopping BOX");
-//            item[i] = new ShoppingBox(id, num);
-            for (Goods g : GoodsList.goods) {
-                if (g.ID == id) {
-                    g.number -= num;
-                    item[i] = g;
-                }
+            item[i] = new ShoppingBox(id, num);
+            for (int k = 0; k <= i; k++) {
+                new GoodsShow(item[k].g);
+                System.out.println("Numbers: "+item[k].num);
             }
+
             System.out.println("Do you want to remove any Item? y/n");
             Scanner scanner1 = new Scanner(System.in);
             String yn = scanner1.nextLine();
@@ -71,8 +70,17 @@ public class Main {
                 break;
 
         }
-        for (Goods it : item)
-            if (it != null)
-                new GoodsShow(it);
+        long totalPrice=0;
+        for (ShoppingBox it : item) {
+
+            if (it != null) {
+                new GoodsShow(it.g);
+                System.out.println("Number: " + it.num);
+                totalPrice+=(it.g.price)*(it.num);
+            }
+        }
+        System.out.println("Total Price: "+totalPrice);
+
+
     }
 }
