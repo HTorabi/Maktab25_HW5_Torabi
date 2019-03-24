@@ -15,7 +15,7 @@ public class ElementArray {
 
         }
     }
-    void metalInfo(){
+    void elementInfo(){
         Scanner scanner=new Scanner(System.in);
         Scanner scanner1=new Scanner(System.in);
         System.out.println("Enter its symbol");
