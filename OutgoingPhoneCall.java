@@ -6,12 +6,6 @@ public class OutgoingPhoneCall extends PhoneCall  {
         this.time = time;
         setPrice(0.04);
     }
-    void PhoneCallInformation(){
-        System.out.println(phoneNumber);
-        System.out.println(price);
-        System.out.println(time);
-        System.out.println(time*price);
-    }
     @Override
     public String getPhoneNumber() {
         return phoneNumber;
@@ -19,6 +13,11 @@ public class OutgoingPhoneCall extends PhoneCall  {
 
     @Override
     public void getInformation() {
+        System.out.println("Phone Number: "+phoneNumber);
+        System.out.println("Price: "+price);
+        System.out.println("Time: "+time);
+        System.out.println("Total Price: "+time*price);
+        System.out.println("=========");
 
     }
 
