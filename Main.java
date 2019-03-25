@@ -28,20 +28,24 @@ public class Main {
             String postalCode = scanner.nextLine();
             UserAddress userAddress1 = new UserAddress(city, town, streetName, postalCode);
             for (Goods g : GoodsList.goods)
-                new GoodsShow(g);
+                new GoodsShow(g,1);
             ShoppingBox[] item = new ShoppingBox[5];
             int i = 0;
             while (true) {
 
                 System.out.println("Enter Code of goods which you want");
                 int id = scanner.nextInt();
-                System.out.println("Enter Number of this");
-                int num = scanner.nextInt();
+                while (true) {
+                    System.out.println("Enter Number of this");
+                    int num = scanner.nextInt();
+                    item[i] = new ShoppingBox(id, num);
+                    if (item[i].g != null)
+                        break;
+                }
                 System.out.println("Your Shopping BOX");
-                item[i] = new ShoppingBox(id, num);
                 for (int k = 0; k <= i; k++) {
                     if (item[k] != null) {
-                        new GoodsShow(item[k].g);
+                        new GoodsShow(item[k].g,0);
                         System.out.println("Numbers: " + item[k].num);
                     }
                 }
@@ -93,7 +97,7 @@ public class Main {
             for (ShoppingBox it : item) {
 
                 if (it != null) {
-                    new GoodsShow(it.g);
+                    new GoodsShow(it.g,0);
                     System.out.println("Number: " + it.num);
                     totalPrice += (it.g.price) * (it.num);
                 }
