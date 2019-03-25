@@ -6,8 +6,12 @@ public class ShoppingBox {
      ShoppingBox(int ID,int num) {
          for (Goods g : GoodsList.goods) {
              if (g.ID == ID) {
-                 g.number -= num;
-                 this.g = g;
+                 if (g.number>=num) {
+                     g.number -= num;
+                     this.g = g;
+                 }
+                 else
+                     System.out.println("Entry number is more than inventory");
              }
          }
          this.num=num;
