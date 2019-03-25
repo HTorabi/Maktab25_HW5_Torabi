@@ -45,17 +45,23 @@ public class Main {
                         System.out.println("Numbers: " + item[k].num);
                     }
                 }
-
-                System.out.println("Do you want to remove any Item? y/n");
-                Scanner scanner1 = new Scanner(System.in);
-                String yn = scanner1.nextLine();
+                String yn;
+                while (true) {
+                    System.out.println("Do you want to remove any Item? y/n");
+                    Scanner scanner1 = new Scanner(System.in);
+                    yn = scanner1.nextLine();
+                    if (!yn.equalsIgnoreCase("y") && !yn.equalsIgnoreCase("n"))
+                        System.out.println("Incorrect Entry"+"\n");
+                    else
+                        break;
+                }
                 if (yn.equalsIgnoreCase("y")) {
                     System.out.println("For removing any item Enter its code");
                     int code = scanner.nextInt();
                     for (int j = 0; j < 5; j++)
                         if (item[j] != null)
                             if (item[j].ID == code) {
-                                for (Goods g:GoodsList.goods){
+                                for (Goods g : GoodsList.goods) {
                                     if (g.ID == code) {
                                         g.number += item[j].num;
                                     }
@@ -94,7 +100,7 @@ public class Main {
             }
             System.out.println("Total Price: " + totalPrice);
             System.out.println("Do you want to Pay for them? y/n");
-            Scanner scanner3=new Scanner(System.in);
+            Scanner scanner3 = new Scanner(System.in);
             if (scanner3.nextLine().equalsIgnoreCase("y"))
                 for (ShoppingBox it : item)
                     it = null;
