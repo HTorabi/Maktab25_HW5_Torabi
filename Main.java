@@ -54,13 +54,19 @@ public class Main {
                     int code = scanner.nextInt();
                     for (int j = 0; j < 5; j++)
                         if (item[j] != null)
-                            if (item[j].ID == code)
+                            if (item[j].ID == code) {
+                                for (Goods g:GoodsList.goods){
+                                    if (g.ID == code) {
+                                        g.number += item[j].num;
+                                    }
+                                }
                                 for (int k = 1; k < 5; k++)
                                     if (j + k < 5)
                                         if (item[j + k] == null)
                                             item[j] = null;
                                         else
                                             item[j] = item[j + k];
+                            }
                 }
                 if (yn.equalsIgnoreCase("n")) {
                     i++;
