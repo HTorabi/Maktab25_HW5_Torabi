@@ -8,5 +8,6 @@ public class NonMetalElement extends Element {
         System.out.println("Atomic Number: "+atomicNumber);
         System.out.println("Atomic Weight: "+atomicWeight);
         System.out.println("nonmetals are poor conductors");
+        System.out.println("=================================");
     }
 }
