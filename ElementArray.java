@@ -3,33 +3,40 @@ import java.util.Scanner;
 public class ElementArray {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Element[] element = new MetalElement[5];
-        int i = 0, m = 0, n = 0;
+        Element[] element=new Element[5];
+        int i=0;
+        int mCounter=0;
+        int nCounter=0;
         while (true) {
-            if (n == 3)
-                System.out.println("We need a metal");
-            if (m == 3)
-                System.out.println("We need a Nonmetal");
-            System.out.println("Metal or NonMetal?");
-            if (scanner.nextLine().equalsIgnoreCase("Metal")) {
-
-                element[i] = new MetalElement(elementProducer()[0], Integer.parseInt(elementProducer()[1]),
-                        Integer.parseInt(elementProducer()[2]));
-                i++;
-                m++;
+            System.out.println("Metal or nonMetal?");
+            String s=scanner.nextLine();
+            if (s.equalsIgnoreCase("metal")){
+                if (element.length-mCounter>2) {
+                    String[] metal = elementProducer();
+                    element[i] = new MetalElement(metal[0], Integer.parseInt(metal[1]), Integer.parseInt(metal[2]));
+                    i++;
+                    mCounter++;
+                }
+                else
+                    System.out.println("we need a nonmetal");
             }
-            if (scanner.nextLine().equalsIgnoreCase("NonMetal")) {
-
-                element[i] = new NonMetalElement(elementProducer()[0], Integer.parseInt(elementProducer()[1]),
-                        Integer.parseInt(elementProducer()[2]));
-                i++;
-                n++;
+            if (s.equalsIgnoreCase("nonmetal")) {
+                if (mCounter >= 2) {
+                    String[] nonmetal = elementProducer();
+                    element[i] = new NonMetalElement(nonmetal[0], Integer.parseInt(nonmetal[1]), Integer.parseInt(nonmetal[2]));
+                    i++;
+                    nCounter++;
+                }
+                else
+                    System.out.println("we need at least two metals");
             }
-            if (i==5)
+            if (i==element.length)
                 break;
 
-
         }
+        for(Element e:element)
+            e.describeElement();
+
     }
 
     static String[] elementProducer() {
